@@ -12,6 +12,8 @@ import { LayoutModule } from './layout/layout.module';
 import { SharedModule } from './shared/shared.module';
 import { RoutesModule } from './routes/routes.module';
 
+import { TabsModule } from 'ngx-bootstrap/tabs';
+
 // https://github.com/ocombe/ng2-translate/issues/218
 export function createTranslateLoader(http: HttpClient) {
     return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -27,6 +29,7 @@ export function createTranslateLoader(http: HttpClient) {
         CoreModule,
         LayoutModule,
         SharedModule.forRoot(),
+        TabsModule.forRoot(), // for tabs
         RoutesModule,
         TranslateModule.forRoot({
             loader: {
